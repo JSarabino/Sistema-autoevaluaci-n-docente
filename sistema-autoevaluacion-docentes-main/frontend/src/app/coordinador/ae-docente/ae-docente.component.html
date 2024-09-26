@@ -1,0 +1,157 @@
+<app-navbar class="componente-superior"></app-navbar>
+<section class="h-100 h-custom gradient-custom-2">
+    <div class="container h-100" id="principal"> <!--Se borro class container no se vio necesaria-->
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <div class="card card-registration card-registration-2 form-box">
+                    <div class="card-body p-0">
+                        <form [formGroup]="form" (ngSubmit)="addUsuario()">
+                            <div class="row g-0">
+                                <div class="titulo">
+                                    <h2>{{operacion}} docente</h2>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="p-5">
+                                        <h4 class="fw-normal mb-4" style="color: rgb(255, 255, 255);">Informacion
+                                            personal
+                                        </h4>
+
+                                        <div class="mb-4 pb-2">
+                                            <select class="select">
+                                                <option value="1">Tipo identificacion</option>
+                                                <option value="2">C.C</option>
+                                                <option value="3">T.I</option>
+                                                <option value="4">C.E</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="form-outline inputbox">
+                                                <input type="number" class="form-control-sm"
+                                                    formControlName="identificacion" required>
+                                                <label for="">identificacion</label>
+                                            </div>
+
+                                            <span
+                                                *ngIf="form.get('identificacion')?.hasError('required') && form.get('identificacion')?.touched">
+                                                Campo requerido
+                                            </span>
+                                        </div>
+
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="form-outline inputbox">
+                                                <input type="text" class="form-control-sm" formControlName="nombre"
+                                                    required>
+                                                <label for="">Nombres</label>
+                                            </div>
+
+                                            <span
+                                                *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">
+                                                Campo requerido
+                                            </span>
+                                        </div>
+
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="form-outline inputbox">
+                                                <input type="text" class="form-control-sm" formControlName="apellido"
+                                                    required>
+                                                <label for="">Apellidos</label>
+                                            </div>
+
+                                            <span
+                                                *ngIf="form.get('apellido')?.hasError('required') && form.get('apellido')?.touched">
+                                                Campo requerido
+                                            </span>
+                                        </div>
+
+
+                                        <div class="mb-4 pb-2">
+                                            <select formControlName="genero" class="select">
+                                                <option value="1">Genero</option>
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Femennino</option>
+                                                <option value="O">Otros</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 bg-indigo text-white">
+                                    <div class="p-5">
+                                        <h4 class="fw-normal mb-4">Información academica</h4>
+
+                                        <div class="mb-4 pb-2">
+                                            <select class="select" formControlName="tipoDoc">
+                                                <option *ngFor="let item of lstRoles" value="1">{{item.ROL_DESCRIPCION}}
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="form-outline inputbox">
+                                                <input type="email" class="form-control-sm" formControlName="correo"
+                                                    required>
+                                                <label for="">Correo electronico</label>
+                                            </div>
+
+                                            <span
+                                                *ngIf="form.get('correo')?.hasError('required') && form.get('correo')?.touched">
+                                                Campo requerido
+                                            </span>
+                                        </div>
+
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="form-outline inputbox">
+                                                <input type="text" class="form-control-sm" formControlName="ultimoEst"
+                                                    required>
+                                                <label for="">Ultimo estudio</label>
+                                            </div>
+
+                                            <span
+                                                *ngIf="form.get('ultimoEst')?.hasError('required') && form.get('ultimoEst')?.touched">
+                                                Campo requerido
+                                            </span>
+                                        </div>
+                                        <div class="col-md-6 mb-4 mt-6 pb-2 fechas">
+                                            <div class="form-outline inputbox">
+                                                <input type="date" class="fechas" formControlName="fechaInicio">
+                                                <label for="">Fecha de Inicio</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-4s pb-2 fechas">
+                                            <div class="form-outline inputbox">
+                                                <input type="date" class="fechas" formControlName="fechaFin"  style="color: #000;">
+                                                <label for="">Fecha de Fin</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 mb-4 pb-2">
+                                            <div class="form-outline inputbox">
+                                                <input type="password" class="form-control-sm"
+                                                    formControlName="contrasena" required>
+                                                <label for="">Contraseña</label>
+                                            </div>
+
+
+
+                                            <span
+                                                *ngIf="form.get('contrasena')?.hasError('required') && form.get('contrasena')?.touched">
+                                                Campo requerido
+                                            </span>
+                                        </div>
+
+                                        <div class="botones">
+                                            <button [disabled]="form.invalid" type="submit"
+                                                class="btn btn-light btn-lg registrar">Guardar</button>
+                                            <button routerLink="/coordinador/docentes" type="button"
+                                                class="btn btn-light btn-lg cancelar">Cancelar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

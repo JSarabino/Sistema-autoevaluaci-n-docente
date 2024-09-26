@@ -1,4 +1,4 @@
-# Sistema-autoevaluaci-n-docente
+# Sistema-autoevaluación-docente
 Plataforma para la gestión de las autoevaluaciones de los docentes de la Universidad del Cauca
 
 # Frontend

@@ -1,0 +1,94 @@
+<app-navbar class="componente-superior"></app-navbar>
+<section>
+    <div class="container form-box">
+        <div class="mt-4 mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="d-flex flex-column botones-principales">
+
+                        <button type="button" class="btn btn-secondary mb-4" (click)="ocultarTodo()">Ocultar Detalles</button>
+                        <button type="button" class="btn btn-primary" routerLink="/docente/autoevaluacion">Volver</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <table class="table table-bordered">
+            <!-- Encabezado de la tabla -->
+            <thead class="titulosT">
+                <tr>
+                    <th>N°</th>
+                    <th>Nombre de Labor</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="cuerpoT">
+                <!-- Fila de la tabla con filtrado -->
+                <tr *ngFor="let item of lstEvaluaciones; let i = index">
+                    <td class="infoPrincipal">{{i+1}}</td>
+                    <td class="infoPrincipal">{{ obtenerInfoLabor(item.LAB_ID).LAB_NOMBRE}}</td>
+                    
+                    <td class="infoPrincipal">{{definirEstado( item.EVA_ESTADO)}}</td>
+                    <td>
+                        <button type="button" class="btn" (click)="mostrarTablas(i)">
+                            <i class="bi bi-plus-circle"></i>
+                        </button>
+                    </td>
+                    <!--Inico de tabla desplegable-->
+                    <div *ngIf="tablasVisibles[i]" class="row">
+                        <!-- Contenido de las dos tablas -->
+                        <div class="tabla col-md-6">
+                            <table class="table table-datos-adicionales">
+                                <tr>
+                                    <td class="columnaTD">Tipo labor</td>
+                                    <td class="infoPrincipal">{{obtenerInfoTipoLabor(obtenerInfoLabor(item.LAB_ID).TL_ID)?.TL_DESCRIPCION}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="columnaTD">Horas</td>
+                                    <td class="infoPrincipal">{{obtenerInfoLabor(item.LAB_ID).LAB_HORAS}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="columnaTD">Descripción</td>
+                                    <td class="infoPrincipal">Ingenieria de Sistemas Obligatoria 2023</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="tabla col-md-6">
+                            <table class="table table-datos-adicionales">
+                              <tr>
+                                <td class="columnaTD">Fecha de Inicio</td>
+                                <td class="infoPrincipal">{{periodo?.PER_FECHAINICIO | date:'yyyy-MM-dd'}}</td>
+                              </tr>
+                              <tr>
+                                <td class="columnaTD">Fecha Fin</td>
+                                <td class="infoPrincipal">{{periodo?.PER_FECHAFIN | date:'yyyy-MM-dd'}}</td>
+                
+                                <td class="columnaTD">Resultados</td>
+                                <td class="infoPrincipal">
+                                  <input type="text" class="form-control" [(ngModel)]="resultados"  *ngIf="item.EVA_ESTADO===1;">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="columnaTD">Evaluación</td>
+                                <td class="infoPrincipal">
+                                  <input type="number" class="form-control" [(ngModel)]="evaluacion" min="0" max="100" *ngIf="item.EVA_ESTADO===1;">
+                                </td>
+                              </tr>
+                              <tr>
+                                <td colspan="2" class="bootn-enviar">
+                                  <button *ngIf="item.EVA_ESTADO===1" type="button" class="btn btn-success mb-4" routerLink="/coordinador/modulo/docente/items/add" (click)="realizarAutoevaluacion(item)">Guardar</button>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                          
+                        <button type="button" class="btn btn-secondary" (click)="ocultarTablas(i)" >Ocultar</button>
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+</section>
+
