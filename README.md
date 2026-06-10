@@ -252,8 +252,8 @@ El proyecto cuenta con una estructura funcional de frontend y backend, integraci
 **Juan Camilo Sarabino Alegría**
 Estudiante de Ingeniería de Sistemas | Software Developer | Fullstack Developer
 
-* GitHub: JSarabino
-* LinkedIn: linkedin.com/in/jsarabino
+* GitHub: [JSarabino](https://github.com/JSarabino)
+* LinkedIn: [linkedin.com/in/jsarabino](https://www.linkedin.com/in/jsarabino)
 
 **Rubén Santiago Cruz Peña**
 Estudiante de Ingeniería de Sistemas | Software Developer | Fullstack Developer
