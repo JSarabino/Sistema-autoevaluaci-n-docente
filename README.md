@@ -1,62 +1,256 @@
-# Sistema-autoevaluación-docente
-Plataforma para la gestión de las autoevaluaciones de los docentes de la Universidad del Cauca
+# Sistema de Autoevaluación Docente
 
-# Frontend
+Aplicación web desarrollada para gestionar el proceso de autoevaluación docente del programa de Ingeniería de Sistemas de la Universidad del Cauca.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+El sistema permite centralizar información relacionada con docentes, usuarios, formularios y procesos de evaluación, facilitando la administración de datos y el seguimiento del proceso desde una plataforma web.
 
 ---
 
-# Backend
+## Objetivo del proyecto
 
-This backend project is built using [Express](https://expressjs.com/), [Sequelize](https://sequelize.org/), and TypeScript.
+Construir una aplicación web fullstack para apoyar la gestión del proceso de autoevaluación docente, integrando frontend, backend, autenticación, consumo de APIs REST y persistencia de datos relacionales.
 
-## Development Server
+---
 
-To run the development server, use the command `nodemon .\dist\index.js`. The server will start, and you can navigate to `http://localhost:3000/` (or another port configured in your server) to interact with the API. The server will automatically reload if there are changes in the source files due to the `nodemon` watch functionality.
+## Características principales
 
-## Code Structure
+* Gestión de usuarios y autenticación.
+* Interfaz web responsive para la administración del proceso.
+* Consumo de APIs REST desde el frontend.
+* Backend estructurado en capas.
+* Gestión de datos mediante Sequelize ORM.
+* Uso de TypeScript en frontend y backend.
+* Pruebas unitarias en frontend con Karma y Jasmine.
 
-- The backend code is written in TypeScript and can be found in the `src` directory.
-- Controllers, models, routes, and other functionalities are organized within their respective directories (e.g., `controllers`, `models`, `routes`).
-- The `dist` directory contains the compiled JavaScript code that is executed by Node.js.
+---
 
-## Building
+## Tecnologías utilizadas
 
-To build the project, use the command `tsc`. This command compiles the TypeScript code into JavaScript, and the resulting files are stored in the `dist/` directory.
+### Frontend
 
-## Database
+* Angular 17
+* TypeScript
+* Angular Material
+* HTML
+* CSS
+* Karma
+* Jasmine
 
-The project uses Sequelize as the ORM for interacting with the database. The database configurations and models are defined in the `config` and `models` directories, respectively.
+### Backend
 
-## Running TypeScript Watch
+* Node.js
+* Express.js
+* TypeScript
+* Sequelize
+* MySQL
+* JWT
+* bcrypt
+* dotenv
+* Nodemon
 
-To continuously compile TypeScript code as you make changes, use the command `tsc --watch`. This command watches for changes in the source files and automatically recompiles them.
+---
 
-## Further Assistance
+## Arquitectura general
 
-If you need more help or information about the project's structure, dependencies, or TypeScript configuration, refer to the TypeScript documentation and Sequelize documentation. Additionally, running `tsc --help` or checking out the TypeScript Configuration file (`tsconfig.json`) might provide useful insights.
+```txt
+Sistema de Autoevaluación Docente
+│
+├── frontend/
+│   └── Aplicación web en Angular
+│
+└── backend/
+    └── API REST con Express, TypeScript y Sequelize
+```
+
+### Componentes principales
+
+| Componente    | Descripción                                                                            |
+| ------------- | -------------------------------------------------------------------------------------- |
+| Frontend      | Aplicación web desarrollada en Angular para la interacción de usuarios con el sistema. |
+| Backend       | API REST desarrollada con Node.js, Express y TypeScript.                               |
+| Base de datos | Persistencia relacional gestionada mediante Sequelize ORM.                             |
+| Autenticación | Protección de rutas y manejo de acceso mediante JWT.                                   |
+| Pruebas       | Pruebas unitarias del frontend mediante Karma y Jasmine.                               |
+
+---
+
+## Mi rol en el proyecto
+
+Participé como desarrollador fullstack en el diseño, construcción y documentación del sistema.
+
+Entre mis principales aportes se encuentran:
+
+* Implementación del frontend en Angular 17.
+* Organización modular de componentes y servicios.
+* Diseño responsive de la interfaz.
+* Desarrollo del backend con Express y TypeScript.
+* Estructuración del backend en capas.
+* Integración de Sequelize ORM para la gestión de datos relacionales.
+* Implementación de autenticación mediante JWT.
+* Consumo de APIs REST desde el frontend.
+* Uso de TypeScript Compiler y Nodemon para el flujo de desarrollo.
+* Ejecución de pruebas unitarias con Karma y Jasmine.
+
+---
+
+## Estructura del repositorio
+
+```txt
+Sistema-autoevaluacion-docente/
+│
+├── backend/
+│   ├── src/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── tsconfig.json
+│   └── .env.example
+│
+├── frontend/
+│   ├── src/
+│   ├── angular.json
+│   ├── package.json
+│   ├── package-lock.json
+│   └── README.md
+│
+├── README.md
+└── .gitignore
+```
+
+---
+
+## Instalación y ejecución
+
+### Requisitos previos
+
+Antes de ejecutar el proyecto, asegúrate de tener instalado:
+
+* Node.js
+* npm
+* Angular CLI
+* MySQL
+
+---
+
+## Backend
+
+Ingresar a la carpeta del backend:
+
+```bash
+cd backend
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Crear el archivo de variables de entorno a partir del ejemplo:
+
+```bash
+cp .env.example .env
+```
+
+El archivo `.env` debe contener al menos:
+
+```env
+PORT=3000
+```
+
+Compilar TypeScript en modo observación:
+
+```bash
+npx tsc --watch
+```
+
+En otra terminal, ejecutar el servidor con Nodemon:
+
+```bash
+npx nodemon ./dist/index.js
+```
+
+El backend se ejecuta por defecto en:
+
+```txt
+http://localhost:3000
+```
+
+---
+
+## Frontend
+
+Desde la raíz del proyecto, ingresar a la carpeta del frontend:
+
+```bash
+cd frontend
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar servidor de desarrollo:
+
+```bash
+npm start
+```
+
+El frontend se ejecuta por defecto en:
+
+```txt
+http://localhost:4200
+```
+
+---
+
+## Comandos útiles
+
+### Backend
+
+```bash
+cd backend
+npm install
+npx tsc --watch
+npx nodemon ./dist/index.js
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+npm start
+npm run build
+npm test
+```
+
+---
+
+## Estado del proyecto
+
+El proyecto cuenta con una estructura funcional de frontend y backend, integración mediante APIs REST, autenticación y gestión de datos mediante ORM.
+
+---
+
+## Mejoras futuras
+
+* Mejorar la documentación de endpoints.
+* Agregar capturas de pantalla del sistema.
+* Incluir diagrama de arquitectura.
+* Documentar el modelo de datos.
+* Crear archivo `docker-compose.yml` para facilitar la ejecución.
+* Agregar pruebas automatizadas del backend.
+* Separar variables de entorno por ambiente.
+* Mejorar la cobertura de pruebas unitarias.
+
+---
+
+## Autor
+
+**Juan Camilo Sarabino Alegría**
+Estudiante de Ingeniería de Sistemas | Software Developer | Fullstack Developer
+
+* GitHub: JSarabino
+* LinkedIn: linkedin.com/in/jsarabino
