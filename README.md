@@ -247,10 +247,22 @@ El proyecto cuenta con una estructura funcional de frontend y backend, integraci
 
 ---
 
-## Autor
+## Autores
 
 **Juan Camilo Sarabino Alegría**
 Estudiante de Ingeniería de Sistemas | Software Developer | Fullstack Developer
 
 * GitHub: JSarabino
 * LinkedIn: linkedin.com/in/jsarabino
+
+**Rubén Santiago Cruz Peña**
+Estudiante de Ingeniería de Sistemas | Software Developer | Fullstack Developer
+
+* GitHub: [RubenSantiagoCP](https://github.com/RubenSantiagoCP)
+* LinkedIn: [linkedin.com/in/rscruz1711](https://www.linkedin.com/in/rscruz1711)
+
+**Naren Alejandro Imbachi Quinayas**
+Estudiante de Ingeniería de Sistemas | Software Developer | Fullstack Developer
+
+* GitHub: [NarenImbachi](https://github.com/NarenImbachi)
+* LinkedIn: [linkedin.com/in/naren-alejandro-imbachi-quinayas-028a413b3](https://www.linkedin.com/in/naren-alejandro-imbachi-quinayas-028a413b3)
